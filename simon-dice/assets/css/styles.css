@@ -1,0 +1,250 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  max-width: 500px;
+  margin: 20px;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+h1 {
+  color: #333;
+  margin-bottom: 30px;
+  font-size: 2.5em;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.game-area {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+}
+
+.botones {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  width: 300px;
+  height: 300px;
+}
+
+.boton {
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.8);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.boton:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.boton:active {
+  transform: scale(0.95);
+}
+
+.boton.verde {
+  background: linear-gradient(145deg, #27ae60, #2ecc71);
+}
+
+.boton.verde.activo,
+.boton.verde.iluminado {
+  background: linear-gradient(145deg, #58d68d, #85e085);
+  box-shadow: 0 0 30px rgba(46, 204, 113, 0.8);
+  transform: scale(1.1);
+}
+
+.boton.rojo {
+  background: linear-gradient(145deg, #c0392b, #e74c3c);
+}
+
+.boton.rojo.activo,
+.boton.rojo.iluminado {
+  background: linear-gradient(145deg, #ec7063, #f1948a);
+  box-shadow: 0 0 30px rgba(231, 76, 60, 0.8);
+  transform: scale(1.1);
+}
+
+.boton.azul {
+  background: linear-gradient(145deg, #2980b9, #3498db);
+}
+
+.boton.azul.activo,
+.boton.azul.iluminado {
+  background: linear-gradient(145deg, #5dade2, #85c1e9);
+  box-shadow: 0 0 30px rgba(52, 152, 219, 0.8);
+  transform: scale(1.1);
+}
+
+.boton.amarillo {
+  background: linear-gradient(145deg, #d68910, #f1c40f);
+}
+
+.boton.amarillo.activo,
+.boton.amarillo.iluminado {
+  background: linear-gradient(145deg, #f4d03f, #f7dc6f);
+  box-shadow: 0 0 30px rgba(241, 196, 15, 0.8);
+  transform: scale(1.1);
+}
+
+.boton.deshabilitado {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2) !important;
+}
+
+.controles {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  width: 100%;
+}
+
+#nivel {
+  font-size: 20px;
+  font-weight: bold;
+  color: #2c3e50;
+  background: linear-gradient(145deg, #ecf0f1, #d5dbdb);
+  padding: 10px 20px;
+  border-radius: 15px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+button {
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 25px;
+  background: linear-gradient(145deg, #8e44ad, #9b59b6);
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+  background: linear-gradient(145deg, #9b59b6, #a569bd);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+button:disabled {
+  background: linear-gradient(145deg, #95a5a6, #7f8c8d);
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.mensaje {
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px;
+  padding: 15px;
+  transition: all 0.3s ease;
+}
+
+.mensaje.exito {
+  background: linear-gradient(145deg, #d4edda, #c3e6cb);
+  color: #155724;
+  border: 2px solid #c3e6cb;
+}
+
+.mensaje.error {
+  background: linear-gradient(145deg, #f8d7da, #f1aeb5);
+  color: #721c24;
+  border: 2px solid #f1aeb5;
+}
+
+.mensaje.info {
+  background: linear-gradient(145deg, #d1ecf1, #bee5eb);
+  color: #0c5460;
+  border: 2px solid #bee5eb;
+}
+
+.mensaje.jugando {
+  background: linear-gradient(145deg, #fff3cd, #ffeaa7);
+  color: #856404;
+  border: 2px solid #ffeaa7;
+}
+
+/* Animación de pulso para cuando está mostrando la secuencia */
+@keyframes pulso {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+.mostrando-secuencia .boton.iluminado {
+  animation: pulso 0.6s ease-in-out;
+}
+
+@media (max-width: 768px) {
+  .container {
+    margin: 10px;
+    padding: 20px;
+  }
+  
+  h1 {
+    font-size: 2em;
+  }
+  
+  .botones {
+    width: 250px;
+    height: 250px;
+    gap: 10px;
+  }
+  
+  .boton {
+    font-size: 20px;
+    border-radius: 15px;
+  }
+  
+  .controles {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  #nivel {
+    font-size: 18px;
+    padding: 8px 16px;
+  }
+} 

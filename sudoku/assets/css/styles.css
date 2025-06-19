@@ -1,0 +1,99 @@
+body {
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  font-family: 'Poppins', Arial, sans-serif;
+  min-height: 100vh;
+  margin: 0;
+}
+.container {
+  max-width: 500px;
+  margin: 40px auto;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  padding: 2.5rem 2rem 2rem 2rem;
+  text-align: center;
+}
+h1 {
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+  color: #8b5cf6;
+}
+.game-area {
+  margin-top: 1.5rem;
+}
+.cuadricula {
+  display: grid;
+  grid-template-columns: repeat(9, 40px);
+  grid-template-rows: repeat(9, 40px);
+  gap: 2px;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  border: 3px solid #8b5cf6;
+  background: #8b5cf6;
+  border-radius: 8px;
+  padding: 3px;
+}
+.celda {
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #374151;
+  border: 1px solid #e5e7eb;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.celda:nth-child(9n+3), .celda:nth-child(9n+6) {
+  border-right: 2px solid #8b5cf6;
+}
+.celda:nth-child(n+19):nth-child(-n+27), .celda:nth-child(n+46):nth-child(-n+54) {
+  border-bottom: 2px solid #8b5cf6;
+}
+.celda.fija {
+  background: #f3f4f6;
+  color: #1f2937;
+  cursor: default;
+}
+.celda.error {
+  background: #fecaca;
+  color: #dc2626;
+}
+.celda.resaltada {
+  background: #ddd6fe;
+}
+input.celda-input {
+  width: 36px;
+  height: 36px;
+  border: none;
+  background: transparent;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #374151;
+}
+.controles {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+button {
+  background: #8b5cf6;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+button:hover {
+  background: #7c3aed;
+}
+.mensaje {
+  min-height: 2.2em;
+  font-size: 1.1rem;
+  color: #dc2626;
+} 

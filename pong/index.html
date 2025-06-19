@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pong</title>
+  <link rel="stylesheet" href="assets/css/styles.css"/>
+</head>
+<body>
+  <div class="container">
+    <h1>🏓 Pong</h1>
+    <div class="game-area">
+      <div class="score-board">
+        <div class="score">
+          <span>Jugador</span>
+          <span id="player-score">0</span>
+        </div>
+        <div class="score">
+          <span>CPU</span>
+          <span id="cpu-score">0</span>
+        </div>
+      </div>
+      
+      <canvas id="pong-canvas" width="800" height="400"></canvas>
+      
+      <div class="controls">
+        <button id="start-btn">Iniciar Juego</button>
+        <button id="pause-btn" disabled>Pausar</button>
+        <button id="reset-btn">Reiniciar</button>
+      </div>
+      
+      <div class="instructions">
+        <p><kbd>W</kbd> / <kbd>S</kbd> o <kbd>↑</kbd> / <kbd>↓</kbd> para mover la paleta</p>
+        <p><kbd>Espacio</kbd> para pausar/reanudar</p>
+      </div>
+      
+      <div id="game-message" class="message"></div>
+    </div>
+  </div>
+  
+  <script src="assets/js/juego.js"></script>
+</body>
+</html> 

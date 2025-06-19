@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tetris</title>
+  <link rel="stylesheet" href="assets/css/styles.css"/>
+</head>
+<body>
+  <div class="container">
+    <h1>🧱 Tetris</h1>
+    <div class="game-container">
+      <div class="game-board">
+        <canvas id="tetris-canvas"></canvas>
+      </div>
+      
+      <div class="side-panel">
+        <div class="stats">
+          <h3>📊 Estadísticas</h3>
+          <div class="stat-item">
+            <span class="stat-label">Puntos:</span>
+            <span class="stat-value" id="score">0</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-label">Líneas:</span>
+            <span class="stat-value" id="lines">0</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-label">Nivel:</span>
+            <span class="stat-value" id="level">1</span>
+          </div>
+        </div>
+        
+        <div class="next-piece">
+          <h3>⏭️ Siguiente</h3>
+          <canvas id="next-canvas"></canvas>
+        </div>
+        
+        <div class="controls">
+          <h3>🎮 Controles</h3>
+          <div class="control-buttons">
+            <button id="iniciar">Iniciar</button>
+            <button id="pausar">Pausar</button>
+          </div>
+          <div class="key-instructions">
+            <kbd>←</kbd><kbd>→</kbd> Mover<br>
+            <kbd>↓</kbd> Bajar <kbd>↑</kbd> Rotar<br>
+            <kbd>Espacio</kbd> Caída rápida<br>
+            <kbd>P</kbd> Pausa
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Game Over -->
+  <div id="game-over" class="game-over">
+    <div class="game-over-content">
+      <h2>🎮 ¡Juego Terminado!</h2>
+      <div class="final-stats">
+        <div>Puntos Finales: <span id="final-score">0</span></div>
+        <div>Líneas Completadas: <span id="final-lines">0</span></div>
+        <div>Nivel Alcanzado: <span id="final-level">1</span></div>
+      </div>
+      <button id="restart-btn" class="restart-btn">Jugar de Nuevo</button>
+    </div>
+  </div>
+
+  <script src="assets/js/juego.js"></script>
+</body>
+</html> 

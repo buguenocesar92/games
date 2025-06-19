@@ -1,0 +1,5 @@
+Este es un juego de Conecta 4 hecho con JavaScript puro. Utiliza un patrón de módulo (IIFE) para encapsular la lógica y evitar variables globales. El tablero se representa como una matriz de 7×6 donde las fichas "caen" por gravedad hasta encontrar una posición libre o una ficha.
+
+El usuario hace clic en una columna para soltar su ficha, que se anima cayendo hasta la posición final. El juego alterna turnos entre jugadores y verifica automáticamente si hay cuatro fichas conectadas en horizontal, vertical o diagonal tras cada movimiento.
+
+El DOM se manipula directamente para mostrar el tablero, animar las fichas, mostrar mensajes y controlar los botones. Hay una función de reinicio para jugar múltiples veces. El flujo del juego y la interfaz están organizados para facilitar la comprensión y la extensión del código. 

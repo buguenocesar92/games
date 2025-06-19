@@ -1,0 +1,237 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0f3460 0%, #e94560 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.container {
+  max-width: 900px;
+  margin: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 20px;
+  font-size: 3em;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradiente 2s ease infinite;
+}
+
+@keyframes gradiente {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.game-area {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.score-board {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  max-width: 400px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 15px;
+  border-radius: 15px;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.score {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.score span:first-child {
+  font-size: 16px;
+  color: #e0e0e0;
+  font-weight: bold;
+}
+
+.score span:last-child {
+  font-size: 32px;
+  font-weight: bold;
+  color: #4ecdc4;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+#pong-canvas {
+  border: 3px solid rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  background: #000;
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+  max-width: 100%;
+  height: auto;
+}
+
+.controls {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+button {
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 25px;
+  background: linear-gradient(145deg, #667eea, #764ba2);
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+button:hover {
+  background: linear-gradient(145deg, #764ba2, #667eea);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+button:disabled {
+  background: linear-gradient(145deg, #95a5a6, #7f8c8d);
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  opacity: 0.6;
+}
+
+.instructions {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 15px;
+  border-radius: 10px;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  max-width: 500px;
+}
+
+.instructions p {
+  margin: 5px 0;
+  font-size: 14px;
+  color: #e0e0e0;
+}
+
+.instructions kbd {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: monospace;
+  font-weight: bold;
+  margin: 0 2px;
+  color: #4ecdc4;
+}
+
+.message {
+  margin-top: 15px;
+  font-size: 18px;
+  font-weight: bold;
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  padding: 15px;
+  transition: all 0.3s ease;
+}
+
+.message.victory {
+  background: linear-gradient(145deg, #d4edda, #c3e6cb);
+  color: #155724;
+  border: 2px solid #c3e6cb;
+}
+
+.message.info {
+  background: linear-gradient(145deg, #d1ecf1, #bee5eb);
+  color: #0c5460;
+  border: 2px solid #bee5eb;
+}
+
+.message.paused {
+  background: linear-gradient(145deg, #fff3cd, #ffeaa7);
+  color: #856404;
+  border: 2px solid #ffeaa7;
+}
+
+/* Efectos de partículas cuando se anota */
+@keyframes explosion {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+.explosion {
+  animation: explosion 0.5s ease-out;
+}
+
+@media (max-width: 768px) {
+  .container {
+    margin: 10px;
+    padding: 20px;
+  }
+  
+  h1 {
+    font-size: 2.5em;
+  }
+  
+  #pong-canvas {
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  .controls {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  button {
+    width: 200px;
+    padding: 15px 20px;
+  }
+  
+  .score-board {
+    max-width: 300px;
+  }
+  
+  .score span:last-child {
+    font-size: 24px;
+  }
+} 

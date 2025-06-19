@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Breakout</title>
+  <link rel="stylesheet" href="assets/css/styles.css"/>
+</head>
+<body>
+  <div class="container">
+    <h1>🧱 Breakout</h1>
+    <div class="game-area">
+      <div class="stats-bar">
+        <div class="stat">
+          <span>Puntos:</span>
+          <span id="score">0</span>
+        </div>
+        <div class="stat">
+          <span>Vidas:</span>
+          <span id="lives">3</span>
+        </div>
+        <div class="stat">
+          <span>Nivel:</span>
+          <span id="level">1</span>
+        </div>
+      </div>
+      
+      <canvas id="breakout-canvas" width="800" height="600"></canvas>
+      
+      <div class="controls">
+        <button id="start-btn">Iniciar Juego</button>
+        <button id="pause-btn" disabled>Pausar</button>
+        <button id="reset-btn">Reiniciar</button>
+      </div>
+      
+      <div class="instructions">
+        <p><kbd>←</kbd> / <kbd>→</kbd> o <kbd>A</kbd> / <kbd>D</kbd> para mover la paleta</p>
+        <p><kbd>Espacio</kbd> para lanzar la pelota / pausar</p>
+      </div>
+      
+      <div id="game-message" class="message"></div>
+    </div>
+  </div>
+
+  <!-- Modal Game Over -->
+  <div id="game-over-modal" class="modal" style="display: none;">
+    <div class="modal-content">
+      <h2 id="modal-title">¡Juego Terminado!</h2>
+      <div id="final-stats"></div>
+      <button id="play-again-btn">Jugar de Nuevo</button>
+    </div>
+  </div>
+  
+  <script src="assets/js/juego.js"></script>
+</body>
+</html> 

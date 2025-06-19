@@ -1,0 +1,5 @@
+Este es un juego de Sudoku hecho con JavaScript puro. Utiliza un patrón de módulo (IIFE) para encapsular la lógica y evitar variables globales. La cuadrícula se genera con un algoritmo de backtracking para crear puzzles válidos, eliminando luego números para crear el desafío.
+
+El usuario puede introducir números en las celdas vacías y el juego valida en tiempo real si hay conflictos en filas, columnas o subcuadrículas. Se resaltan los errores y se detecta automáticamente la victoria al completar correctamente el puzzle.
+
+El DOM se manipula directamente para mostrar la cuadrícula, resaltar errores, mostrar mensajes y controlar los botones. Hay una función de reinicio para generar nuevos puzzles. El flujo del juego y la interfaz están organizados para facilitar la comprensión y la extensión del código. 

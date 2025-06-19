@@ -1,0 +1,5 @@
+Este es un juego de Rompecabezas Deslizante (15 Puzzle) hecho con JavaScript puro. Utiliza un patrón de módulo (IIFE) para encapsular la lógica y evitar variables globales. La cuadrícula se representa como un array bidimensional con números del 1 al 15 y un espacio vacío.
+
+El usuario puede hacer clic en fichas adyacentes al espacio vacío para moverlas. El juego valida que el movimiento sea posible y actualiza la cuadrícula. Se detecta automáticamente la victoria cuando los números están ordenados del 1 al 15 con el espacio vacío en la esquina inferior derecha.
+
+El DOM se manipula directamente para mostrar la cuadrícula, contar movimientos, mostrar mensajes y controlar los botones. Hay una función de barajado para crear nuevos puzzles. El flujo del juego y la interfaz están organizados para facilitar la comprensión y la extensión del código. 

@@ -1,0 +1,5 @@
+Este es un juego de Tetris hecho con JavaScript puro. Utiliza un patrón de módulo (IIFE) para encapsular la lógica y evitar variables globales. El tablero se representa como una matriz de 10×20 y las piezas (tetrominós) se definen como arrays de coordenadas con diferentes rotaciones.
+
+Las piezas caen automáticamente usando un temporizador y el usuario puede moverlas lateralmente o rotarlas con las flechas del teclado. El juego detecta colisiones con los bordes, el suelo y otras piezas. Cuando se completa una línea horizontal, se elimina y las líneas superiores bajan.
+
+El DOM se manipula para renderizar el tablero en canvas, mostrar la puntuación, el nivel y controlar los botones. Se usa un bucle de juego con requestAnimationFrame para animaciones suaves. El flujo del juego y la interfaz están organizados para facilitar la comprensión y la extensión del código. 

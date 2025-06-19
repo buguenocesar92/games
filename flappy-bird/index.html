@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Flappy Bird</title>
+  <link rel="stylesheet" href="assets/css/styles.css"/>
+</head>
+<body>
+  <div class="container">
+    <h1>🐦 Flappy Bird</h1>
+    
+    <div class="game-area">
+      <div class="stats-bar">
+        <div class="stat">
+          <span>Puntuación</span>
+          <span id="score">0</span>
+        </div>
+        <div class="stat">
+          <span>Mejor</span>
+          <span id="best-score">0</span>
+        </div>
+      </div>
+      
+      <canvas id="game-canvas" width="400" height="600"></canvas>
+      
+      <div class="controls">
+        <button id="start-btn">Iniciar Juego</button>
+        <button id="pause-btn" disabled>Pausar</button>
+        <button id="reset-btn">Reiniciar</button>
+      </div>
+      
+      <div class="instructions">
+        <p><kbd>Espacio</kbd>, <kbd>Click</kbd> o <kbd>Toque</kbd> para volar</p>
+        <p>¡Evita las tuberías verdes!</p>
+      </div>
+      
+      <div id="game-message" class="message"></div>
+    </div>
+  </div>
+
+  <!-- Modal Game Over -->
+  <div id="game-over-modal" class="modal" style="display: none;">
+    <div class="modal-content">
+      <h2 id="modal-title">¡Juego Terminado!</h2>
+      <div class="bird-icon">🐦</div>
+      <div id="final-stats"></div>
+      <div class="medals" id="medals"></div>
+      <button id="play-again-btn">Volar de Nuevo</button>
+    </div>
+  </div>
+  
+  <script src="assets/js/juego.js"></script>
+</body>
+</html> 

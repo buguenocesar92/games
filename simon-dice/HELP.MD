@@ -1,0 +1,5 @@
+Este es un juego de Simon Dice hecho con JavaScript puro. Utiliza un patrón de módulo (IIFE) para encapsular la lógica y evitar variables globales. El juego genera secuencias aleatorias de colores que el usuario debe repetir en el mismo orden, agregando un nuevo color en cada ronda.
+
+Simon muestra la secuencia iluminando los botones de colores con efectos visuales y sonoros, luego espera a que el usuario reproduzca la secuencia haciendo clic en los botones. Si el usuario comete un error, el juego termina y muestra la puntuación final.
+
+El DOM se manipula directamente para mostrar los botones de colores, efectos de iluminación, mensajes de estado y controlar los botones de juego. Se usan temporizadores para controlar la velocidad de la secuencia y las animaciones. El flujo del juego y la interfaz están organizados para facilitar la comprensión y la extensión del código. 

@@ -1,0 +1,5 @@
+Este es un juego del Ahorcado hecho con JavaScript puro. Utiliza un patrón de módulo (IIFE) para encapsular la lógica y evitar variables globales. El juego selecciona una palabra aleatoria de una base de datos y la muestra como guiones bajos que se van revelando con cada letra correcta.
+
+El usuario puede hacer clic en las letras del teclado virtual o usar el teclado físico para adivinar. Con cada letra incorrecta se dibuja una parte del ahorcado y se desactiva la letra del teclado. El juego termina cuando se adivina la palabra completa o se completa el dibujo del ahorcado.
+
+El DOM se manipula directamente para mostrar la palabra oculta, el teclado virtual, el dibujo del ahorcado, mensajes y controlar los botones. Hay una función de reinicio para jugar múltiples veces con palabras diferentes. El flujo del juego y la interfaz están organizados para facilitar la comprensión y la extensión del código. 

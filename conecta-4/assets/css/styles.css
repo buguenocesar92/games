@@ -1,0 +1,93 @@
+body {
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  font-family: 'Poppins', Arial, sans-serif;
+  min-height: 100vh;
+  margin: 0;
+}
+.container {
+  max-width: 600px;
+  margin: 40px auto;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  padding: 2.5rem 2rem 2rem 2rem;
+  text-align: center;
+}
+h1 {
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+  color: #dc2626;
+}
+.game-area {
+  margin-top: 1.5rem;
+}
+.tablero {
+  display: grid;
+  grid-template-columns: repeat(7, 70px);
+  grid-template-rows: repeat(6, 70px);
+  gap: 8px;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  background: #1e40af;
+  border-radius: 12px;
+  padding: 8px;
+}
+.celda {
+  background: #f8fafc;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+.celda:hover {
+  background: #e2e8f0;
+}
+.celda.jugador1 {
+  background: #dc2626;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
+}
+.celda.jugador2 {
+  background: #fbbf24;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
+}
+.celda.ganadora {
+  animation: ganar 1s infinite;
+}
+@keyframes ganar {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+.controles {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+button {
+  background: #dc2626;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+button:hover {
+  background: #b91c1c;
+}
+#turno {
+  color: #dc2626;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+.mensaje {
+  min-height: 2.2em;
+  font-size: 1.1rem;
+  color: #dc2626;
+} 

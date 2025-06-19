@@ -1,0 +1,208 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  max-width: 600px;
+  margin: 20px;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+h1 {
+  color: #333;
+  margin-bottom: 30px;
+  font-size: 2.5em;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.game-area {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.dibujo {
+  font-family: 'Courier New', monospace;
+  font-size: 24px;
+  line-height: 1.2;
+  min-height: 200px;
+  background: #f8f9fa;
+  border: 2px solid #dee2e6;
+  border-radius: 10px;
+  padding: 20px;
+  white-space: pre-line;
+  color: #495057;
+}
+
+.palabra {
+  font-size: 2em;
+  font-weight: bold;
+  letter-spacing: 8px;
+  margin: 20px 0;
+  color: #333;
+  font-family: 'Courier New', monospace;
+}
+
+.teclado {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(40px, 1fr));
+  gap: 8px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.tecla {
+  padding: 12px 8px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(145deg, #e3f2fd, #bbdefb);
+  color: #1565c0;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.tecla:hover {
+  background: linear-gradient(145deg, #bbdefb, #90caf9);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.tecla:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.tecla.usada {
+  background: #e0e0e0;
+  color: #757575;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.tecla.correcta {
+  background: linear-gradient(145deg, #c8e6c9, #a5d6a7);
+  color: #2e7d32;
+}
+
+.tecla.incorrecta {
+  background: linear-gradient(145deg, #ffcdd2, #ef9a9a);
+  color: #c62828;
+}
+
+.controles {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+#intentos {
+  font-size: 18px;
+  font-weight: bold;
+  color: #666;
+}
+
+button {
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 25px;
+  background: linear-gradient(145deg, #4CAF50, #45a049);
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+  background: linear-gradient(145deg, #45a049, #3d8b40);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.mensaje {
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  padding: 15px;
+  transition: all 0.3s ease;
+}
+
+.mensaje.exito {
+  background: linear-gradient(145deg, #d4edda, #c3e6cb);
+  color: #155724;
+  border: 2px solid #c3e6cb;
+}
+
+.mensaje.error {
+  background: linear-gradient(145deg, #f8d7da, #f1aeb5);
+  color: #721c24;
+  border: 2px solid #f1aeb5;
+}
+
+.mensaje.info {
+  background: linear-gradient(145deg, #d1ecf1, #bee5eb);
+  color: #0c5460;
+  border: 2px solid #bee5eb;
+}
+
+@media (max-width: 768px) {
+  .container {
+    margin: 10px;
+    padding: 20px;
+  }
+  
+  h1 {
+    font-size: 2em;
+  }
+  
+  .palabra {
+    font-size: 1.5em;
+    letter-spacing: 4px;
+  }
+  
+  .teclado {
+    grid-template-columns: repeat(6, 1fr);
+  }
+  
+  .tecla {
+    padding: 10px 6px;
+    font-size: 14px;
+  }
+  
+  .controles {
+    flex-direction: column;
+  }
+} 
