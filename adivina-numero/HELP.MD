@@ -1,0 +1,3 @@
+"Este es un juego de Adivina el Número hecho con JavaScript puro. Utiliza un patrón de módulo (IIFE) para encapsular la lógica y evitar variables globales. Al iniciar el juego, se genera un número aleatorio entre un rango definido. El usuario introduce su intento y el juego responde si el número es mayor, menor o correcto.
+
+El DOM se manipula directamente para mostrar mensajes, actualizar el contador de intentos y controlar los botones. Hay una función de reinicio para jugar múltiples veces. El flujo del juego y la interfaz están organizados para facilitar la comprensión y la extensión del código." 

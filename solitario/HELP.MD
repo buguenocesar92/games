@@ -1,0 +1,3 @@
+"Este es un juego de Solitario (Klondike) hecho con JavaScript puro. Utiliza un patrón de módulo (IIFE) para encapsular la lógica y evitar variables globales. El mazo se genera y baraja al inicio, y las cartas se distribuyen en columnas y mazos de salida según las reglas clásicas.
+
+El usuario puede arrastrar y soltar cartas entre columnas y mazos de salida, siguiendo las reglas de movimiento del Solitario. El DOM se manipula para mostrar las cartas, columnas, mazos y mensajes. Hay una función de reinicio para jugar múltiples veces. El flujo del juego y la interfaz están organizados para facilitar la comprensión y la extensión del código." 

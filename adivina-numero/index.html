@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Adivina el Número</title>
+  <link rel="stylesheet" href="assets/css/styles.css"/>
+</head>
+<body>
+  <div class="container">
+    <h1>🔢 Adivina el Número</h1>
+    <p id="descripcion">Adivina el número secreto entre 1 y 100</p>
+    <div class="game-area">
+      <input type="number" id="inputNumero" placeholder="Tu intento..." min="1" max="100" />
+      <button id="btnIntentar">Intentar</button>
+      <button id="btnNuevo">Nuevo Juego</button>
+    </div>
+    <div id="mensaje" class="mensaje"></div>
+    <div id="intentos" class="intentos">Intentos: 0</div>
+  </div>
+  <script src="assets/js/juego.js"></script>
+</body>
+</html> 

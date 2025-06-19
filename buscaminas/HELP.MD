@@ -1,0 +1,5 @@
+"Este es un juego de Buscaminas hecho con JavaScript puro. Utiliza un patrón de módulo (IIFE) para encapsular la lógica y evitar variables globales. El tablero se genera como una matriz bidimensional, colocando minas aleatoriamente y calculando los números de casillas adyacentes.
+
+El usuario puede descubrir casillas o marcar minas con clic derecho (banderas). El juego detecta automáticamente la victoria (todas las casillas libres descubiertas) o la derrota (mina descubierta), mostrando mensajes y bloqueando el tablero al finalizar.
+
+El DOM se manipula directamente para mostrar el tablero, mensajes, contador de minas y controlar los botones. Hay una función de reinicio para jugar múltiples veces. El flujo del juego y la interfaz están organizados para facilitar la comprensión y la extensión del código." 

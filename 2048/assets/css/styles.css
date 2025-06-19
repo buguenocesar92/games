@@ -1,0 +1,86 @@
+body {
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  font-family: 'Poppins', Arial, sans-serif;
+  min-height: 100vh;
+  margin: 0;
+}
+.container {
+  max-width: 420px;
+  margin: 60px auto;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  padding: 2.5rem 2rem 2rem 2rem;
+  text-align: center;
+}
+h1 {
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+  color: #a16207;
+}
+.game-area {
+  margin-top: 1.5rem;
+}
+.tablero {
+  display: grid;
+  grid-template-columns: repeat(4, 70px);
+  grid-template-rows: repeat(4, 70px);
+  gap: 8px;
+  justify-content: center;
+  margin-bottom: 1.2rem;
+}
+.celda {
+  background: #f3f4f6;
+  border-radius: 10px;
+  font-size: 1.6rem;
+  color: #a16207;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  transition: background 0.2s, color 0.2s;
+  user-select: none;
+  border: 2px solid #fde68a;
+  height: 70px;
+  width: 70px;
+}
+.celda.n2 { background: #fef9c3; color: #a16207; }
+.celda.n4 { background: #fde68a; color: #a16207; }
+.celda.n8 { background: #fbbf24; color: #fff; }
+.celda.n16 { background: #f59e42; color: #fff; }
+.celda.n32 { background: #f97316; color: #fff; }
+.celda.n64 { background: #ea580c; color: #fff; }
+.celda.n128 { background: #eab308; color: #fff; }
+.celda.n256 { background: #ca8a04; color: #fff; }
+.celda.n512 { background: #a16207; color: #fff; }
+.celda.n1024 { background: #854d0e; color: #fff; }
+.celda.n2048 { background: #713f12; color: #fff; }
+.controles {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+button {
+  background: #a16207;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+button:hover {
+  background: #854d0e;
+}
+#puntuacion {
+  color: #a16207;
+  font-size: 1.1rem;
+}
+.mensaje {
+  min-height: 2.2em;
+  font-size: 1.1rem;
+  color: #dc2626;
+} 

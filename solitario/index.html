@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Solitario (Klondike)</title>
+  <link rel="stylesheet" href="assets/css/styles.css"/>
+</head>
+<body>
+  <div class="container">
+    <h1>🃏 Solitario</h1>
+    <div class="game-area">
+      <div class="mazos">
+        <div id="mazo" class="mazo"></div>
+        <div id="descarte" class="mazo"></div>
+        <div class="mazos-salida">
+          <div class="mazo-salida" data-palo="C"></div>
+          <div class="mazo-salida" data-palo="D"></div>
+          <div class="mazo-salida" data-palo="H"></div>
+          <div class="mazo-salida" data-palo="S"></div>
+        </div>
+      </div>
+      <div id="columnas" class="columnas"></div>
+      <div class="controles">
+        <button id="btnNuevo">Nuevo Juego</button>
+      </div>
+      <div id="mensaje" class="mensaje"></div>
+    </div>
+  </div>
+  <script src="assets/js/juego.js"></script>
+</body>
+</html> 

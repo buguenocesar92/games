@@ -1,0 +1,5 @@
+"Este es un juego de 2048 hecho con JavaScript puro. Utiliza un patrón de módulo (IIFE) para encapsular la lógica y evitar variables globales. El tablero se representa como una matriz 4x4, donde las fichas se mueven y combinan según la dirección indicada por el usuario con las flechas del teclado.
+
+Tras cada movimiento válido, se genera una nueva ficha (2 o 4) en una celda vacía. El juego detecta automáticamente la victoria (al llegar a 2048) o la derrota (cuando no hay movimientos posibles), mostrando mensajes y bloqueando el tablero al finalizar.
+
+El DOM se manipula directamente para mostrar el tablero, la puntuación, mensajes y controlar los botones. Hay una función de reinicio para jugar múltiples veces. El flujo del juego y la interfaz están organizados para facilitar la comprensión y la extensión del código." 
