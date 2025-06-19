@@ -1,0 +1,5 @@
+"Este es un juego de Blackjack hecho con JavaScript puro. Utiliza un patrón de módulo (IIFE) para encapsular la lógica y evitar variables globales. La baraja se crea al inicio combinando números y letras con los 4 palos, y luego se baraja usando la librería externa underscore.js.
+
+Cuando el jugador pide una carta, se extrae del mazo, se calcula su valor y se suman los puntos, mostrándolos en pantalla. La computadora juega automáticamente tras el turno del jugador. El juego termina cuando alguno supera 21 o el jugador decide detenerse.
+
+El diseño utiliza Bootstrap para los estilos. Se manipula el DOM directamente para mostrar cartas, puntajes y controlar los botones. Hay una función de reinicio para jugar múltiples veces. El flujo del juego y la interfaz están organizados para facilitar la comprensión y la extensión del código."

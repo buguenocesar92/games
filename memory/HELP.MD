@@ -1,0 +1,5 @@
+"Este es un juego de Memoria hecho con JavaScript puro. Utiliza un patrón de módulo (IIFE) para encapsular la lógica y evitar variables globales. El tablero se genera mezclando pares de símbolos y renderizando las cartas en el DOM.
+
+Cuando el jugador hace clic en una carta, se voltea y se muestra su símbolo. Si se voltean dos cartas, el juego verifica si forman un par: si coinciden, permanecen descubiertas; si no, se ocultan tras un breve retraso. El objetivo es encontrar todos los pares con la menor cantidad de movimientos posibles.
+
+El diseño utiliza TailwindCSS para los estilos y gradientes. Se manipula el DOM directamente para mostrar cartas, puntajes, mensajes y controlar los botones. Hay funciones para reiniciar el juego y para mostrar una pista temporalmente (todas las cartas se revelan por un segundo). El juego muestra mensajes de victoria y feedback visual al usuario." 

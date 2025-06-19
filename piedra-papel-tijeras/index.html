@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Piedra, Papel o Tijeras</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .gradient-text {
+      background: linear-gradient(45deg, #3b82f6, #8b5cf6, #ec4899);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .thinking {
+      animation: bounce 1s infinite;
+    }
+    
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+      }
+      40% {
+        transform: translateY(-10px);
+      }
+      60% {
+        transform: translateY(-5px);
+      }
+    }
+    
+    .choice-btn {
+      transition: all 0.3s ease;
+      transform: scale(1);
+    }
+    
+    .choice-btn:hover {
+      transform: scale(1.05);
+    }
+    
+    .choice-btn:active {
+      transform: scale(0.95);
+    }
+    
+    .computer-choice.active {
+      opacity: 1 !important;
+      border-color: #fbbf24;
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 min-h-screen text-white font-sans">
+  <div class="container mx-auto px-4 py-8 flex flex-col items-center justify-center min-h-screen max-w-6xl">
+    
+    <!-- Header -->
+    <div class="text-center mb-12">
+      <h1 class="text-5xl md:text-7xl font-bold mb-4 gradient-text">
+        🪨📄✂️ Piedra, Papel o Tijeras
+      </h1>
+      <p class="text-xl text-gray-300">¡Elige tu opción y desafía a la computadora!</p>
+    </div>
+
+    <!-- Score Board -->
+    <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 mb-8 border border-white/20 shadow-2xl">
+      <div class="flex justify-between items-center text-center min-w-[300px]">
+        <div class="space-y-2">
+          <h3 class="text-gray-300 text-sm font-medium uppercase tracking-wider">Jugador</h3>
+          <div id="player-score" class="text-4xl font-bold text-blue-400">0</div>
+        </div>
+        <div class="text-gray-400 text-3xl font-bold px-8">VS</div>
+        <div class="space-y-2">
+          <h3 class="text-gray-300 text-sm font-medium uppercase tracking-wider">Computadora</h3>
+          <div id="computer-score" class="text-4xl font-bold text-red-400">0</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Game Area -->
+    <div class="grid md:grid-cols-3 gap-12 items-center w-full max-w-5xl mb-8">
+      
+      <!-- Player Section -->
+      <div class="space-y-6">
+        <h2 class="text-2xl font-semibold text-center text-gray-200">Tu elección</h2>
+        <div class="flex flex-col gap-4" id="player-choices">
+          <button class="choice choice-btn bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 rounded-2xl p-6 border-2 border-blue-400/30 shadow-lg" data-choice="piedra">
+            <div class="flex items-center gap-4">
+              <span class="text-4xl">🪨</span>
+              <span class="text-xl font-semibold">Piedra</span>
+            </div>
+          </button>
+          <button class="choice choice-btn bg-gradient-to-r from-green-600 to-green-700 hover:from-green-500 hover:to-green-600 rounded-2xl p-6 border-2 border-green-400/30 shadow-lg" data-choice="papel">
+            <div class="flex items-center gap-4">
+              <span class="text-4xl">📄</span>
+              <span class="text-xl font-semibold">Papel</span>
+            </div>
+          </button>
+          <button class="choice choice-btn bg-gradient-to-r from-red-600 to-red-700 hover:from-red-500 hover:to-red-600 rounded-2xl p-6 border-2 border-red-400/30 shadow-lg" data-choice="tijeras">
+            <div class="flex items-center gap-4">
+              <span class="text-4xl">✂️</span>
+              <span class="text-xl font-semibold">Tijeras</span>
+            </div>
+          </button>
+        </div>
+      </div>
+
+      <!-- VS Section -->
+      <div class="flex flex-col items-center space-y-6">
+        <div class="text-8xl" id="vs-icon">⚡</div>
+        <div id="thinking-indicator" class="hidden text-center">
+          <div class="thinking text-4xl mb-2">🤔</div>
+          <p class="text-gray-300">Computadora pensando...</p>
+        </div>
+        <div id="result" class="text-center space-y-3 min-h-[100px] flex flex-col justify-center">
+          <!-- Resultado aparecerá aquí -->
+        </div>
+      </div>
+
+      <!-- Computer Section -->
+      <div class="space-y-6">
+        <h2 class="text-2xl font-semibold text-center text-gray-200">Computadora</h2>
+        <div class="flex flex-col gap-4" id="computer-choices">
+          <div class="computer-choice bg-gray-700/50 rounded-2xl p-6 border-2 border-gray-600/30 opacity-50" data-choice="piedra">
+            <div class="flex items-center gap-4">
+              <span class="text-4xl">🪨</span>
+              <span class="text-xl font-semibold">Piedra</span>
+            </div>
+          </div>
+          <div class="computer-choice bg-gray-700/50 rounded-2xl p-6 border-2 border-gray-600/30 opacity-50" data-choice="papel">
+            <div class="flex items-center gap-4">
+              <span class="text-4xl">📄</span>
+              <span class="text-xl font-semibold">Papel</span>
+            </div>
+          </div>
+          <div class="computer-choice bg-gray-700/50 rounded-2xl p-6 border-2 border-gray-600/30 opacity-50" data-choice="tijeras">
+            <div class="flex items-center gap-4">
+              <span class="text-4xl">✂️</span>
+              <span class="text-xl font-semibold">Tijeras</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Reset Button -->
+    <button id="reset-btn" class="hidden bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 text-white font-semibold py-3 px-8 rounded-xl shadow-lg transition-all duration-300 transform hover:scale-105">
+      🔄 Reiniciar Juego
+    </button>
+
+    <!-- Instructions -->
+    <div class="mt-8 text-center text-gray-400 space-y-2">
+      <p class="text-lg font-medium mb-3">Reglas del juego:</p>
+      <div class="flex flex-wrap justify-center gap-6 text-sm">
+        <span>🪨 Piedra vence a Tijeras</span>
+        <span>📄 Papel vence a Piedra</span>
+        <span>✂️ Tijeras vence a Papel</span>
+      </div>
+    </div>
+  </div>
+  
+  <footer class="text-center text-gray-500 mt-12">
+    <p>Desarrollado por <a href="https://github.com/tu-usuario" target="_blank">Tu Nombre</a></p>
+  </footer>
+
+  <script src="assets/js/game.js"></script>
+  <script src="assets/js/ui.js"></script>
+</body>
+</html>

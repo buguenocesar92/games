@@ -1,0 +1,75 @@
+        /* Estilos para las cartas - Compatible con tu JavaScript */
+        .carta {
+            width: 100px;
+            height: auto;
+            margin-left: -20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+            border: 2px solid rgba(255,255,255,0.2);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .carta:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.4);
+            z-index: 10;
+        }
+
+        .carta:first-child {
+            margin-left: 0;
+        }
+
+        /* Asegurar que las cartas se apilen correctamente */
+        .divCartas {
+            position: relative;
+            display: flex;
+            align-items: center;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            padding: 20px;
+        }
+
+        /* Scrollbar personalizado para las cartas */
+        .divCartas::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .divCartas::-webkit-scrollbar-track {
+            background: rgba(0,0,0,0.2);
+            border-radius: 4px;
+        }
+
+        .divCartas::-webkit-scrollbar-thumb {
+            background: rgba(255,215,0,0.5);
+            border-radius: 4px;
+        }
+
+        .divCartas::-webkit-scrollbar-thumb:hover {
+            background: rgba(255,215,0,0.7);
+        }
+
+        /* Animación para elementos que aparecen */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .carta {
+            animation: fadeInUp 0.5s ease-out;
+        }
+
+        /* Responsive para cartas en móviles */
+        @media (max-width: 768px) {
+            .carta {
+                width: 80px;
+                margin-left: -15px;
+            }
+        }

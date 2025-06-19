@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Juego de Memoria</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="assets/js/tailwind.config.js"></script>
+  <link rel="stylesheet" href="assets/css/styles.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-gradient-to-br from-memory-purple via-purple-800 to-memory-dark font-game min-h-screen">
+
+  <!-- Header -->
+  <header class="bg-gradient-to-r from-memory-dark via-gray-800 to-memory-dark shadow-2xl">
+      <div class="container mx-auto px-4 py-6">
+          <h1 class="text-4xl md:text-6xl font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-memory-accent via-yellow-400 to-memory-accent">
+              🧠 JUEGO DE MEMORIA 🎯
+          </h1>
+          <p class="text-center text-gray-300 mt-2 text-lg">Encuentra todos los pares y pon a prueba tu memoria</p>
+      </div>
+  </header>
+
+  <!-- Game Stats -->
+  <div class="container mx-auto px-4 py-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-md mx-auto mb-8">
+          <div class="bg-black/30 backdrop-blur-sm rounded-2xl p-6 text-center border border-memory-accent/20">
+              <div class="text-3xl mb-2">🎯</div>
+              <h2 class="text-xl font-semibold text-white mb-2">Movimientos</h2>
+              <span id="moves" class="text-3xl font-bold text-memory-accent bg-black/50 px-4 py-2 rounded-full">0</span>
+          </div>
+          <div class="bg-black/30 backdrop-blur-sm rounded-2xl p-6 text-center border border-green-500/20">
+              <div class="text-3xl mb-2">✨</div>
+              <h2 class="text-xl font-semibold text-white mb-2">Pares Encontrados</h2>
+              <span id="pairs" class="text-3xl font-bold text-green-400 bg-black/50 px-4 py-2 rounded-full">0</span>
+          </div>
+      </div>
+
+      <!-- Game Controls -->
+      <div class="flex flex-wrap justify-center gap-4 mb-8">
+          <button id="btnNuevo" class="bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white font-bold py-3 px-8 rounded-xl shadow-lg transform hover:scale-105 transition-all duration-200 border-2 border-red-500">
+              🎮 Nuevo Juego
+          </button>
+          <button id="btnPista" class="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 disabled:from-gray-500 disabled:to-gray-600 disabled:cursor-not-allowed text-white font-bold py-3 px-8 rounded-xl shadow-lg transform hover:scale-105 transition-all duration-200 border-2 border-blue-500 disabled:border-gray-400">
+              💡 Pista (1 segundo)
+          </button>
+      </div>
+
+      <!-- Game Board -->
+      <div class="flex justify-center mb-8">
+          <div class="bg-black/20 backdrop-blur-sm rounded-3xl p-6 border border-white/10 shadow-2xl">
+              <div id="gameBoard" class="grid grid-cols-4 gap-3 max-w-sm mx-auto">
+              </div>
+          </div>
+      </div>
+
+      <!-- Message Area -->
+      <div id="message" class="text-center">
+          <div class="bg-black/50 backdrop-blur-sm rounded-xl p-6 max-w-md mx-auto border border-memory-accent/30">
+              <p class="text-memory-accent text-xl font-bold">¡Encuentra todos los pares y pon a prueba tu memoria!</p>
+          </div>
+      </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-memory-dark/80 backdrop-blur-sm mt-12 py-6 border-t border-memory-accent/20">
+      <div class="container mx-auto px-4 text-center">
+          <p class="text-gray-400">© 2024 Juego de Memoria Profesional - Entrena tu mente</p>
+      </div>
+  </footer>
+
+  <script src="assets/js/juego.js"></script>
+  <script>
+    juegoMemoria.nuevoJuego();
+  </script>
+</body>
+</html>
